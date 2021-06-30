@@ -3,7 +3,7 @@ env:
   RAILS_ENV: test
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: postgres
-  POSTGRES_DB: pairfinder_test
+  POSTGRES_DB: findoc_test
   RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
 
 name: Rails_tests
