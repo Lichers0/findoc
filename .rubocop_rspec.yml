@@ -1,0 +1,19 @@
+RSpec/NestedGroups:
+  Max: 4
+RSpec/MultipleExpectations:
+  Exclude:
+    - "spec/**/*"
+RSpec/ExampleLength:
+  Exclude:
+    - "spec/**/*"
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - if
+    - unless
+    - for
+    - and
