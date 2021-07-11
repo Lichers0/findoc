@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
+  <div>
     <p>{{ message }}</p>
+    <q-input outlined v-model="text" label="Outlined" />
   </div>
 </template>
 
