@@ -25,13 +25,15 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails"
+
+  gem "standard"
 end
 
 group :development do
   gem 'web-console', '>= 4.1.0'
 
   gem 'listen', '~> 3.3'
-  gem 'rack-mini-profiler', '~> 2.0'
+  # gem 'rack-mini-profiler', '~> 2.0'
 
   gem "annotate"
   gem "i18n-debug"
