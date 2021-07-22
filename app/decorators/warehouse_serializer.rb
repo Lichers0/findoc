@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class WarehouseSerialize
+class WarehouseSerializer
   def initialize(object)
     @object = object
   end
 
-  def as_json(_options = {})
+  def as_json(_ = {})
     @object.as_json(only: [:id, :name])
   end
 end

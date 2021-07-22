@@ -71,19 +71,19 @@
               {{ props.row.line_number }}
             </q-td>
             <q-td>
-              <q-input v-model="props.row.upc" autofucus borderless filled dense></q-input>
+              <q-input v-model="props.row.upc" autofocus borderless filled dense></q-input>
             </q-td>
             <q-td>
-              <q-input v-model="props.row.quantity" autofucus borderless filled dense></q-input>
+              <q-input v-model="props.row.quantity" borderless filled dense></q-input>
             </q-td>
             <q-td>
-              <q-input v-model="props.row.price" autofucus borderless filled dense></q-input>
+              <q-input v-model='props.row.price" borderless filled dense></q-input>
             </q-td>
             <q-td :props="props" key="amount">
               {{ props.row.amount }}
             </q-td>
             <q-td>
-              <q-input v-model="props.row.broker_price" autofucus borderless filled dense></q-input>
+              <q-input v-model="props.row.broker_price" borderless filled dense></q-input>
             </q-td>
             <q-td :props="props" key="broker_amount">
               {{ props.row.proker_amount }}

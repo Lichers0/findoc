@@ -4,8 +4,7 @@ module Api
   module V1
     class WarehousesController < BaseController
       def index
-        @warehouse = ::WarehouseSerialize.new(Warehouse.all)
-        render json: @warehouse
+        respond_with ::WarehouseSerializer.new(Warehouse.all)
       end
     end
   end

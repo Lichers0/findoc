@@ -4,8 +4,7 @@ module Api
   module V1
     class BrokersController < BaseController
       def index
-        @broker = ::BrokerSerialize.new(Counterparty.all)
-        render json: @broker
+        respond_with ::BrokerSerializer.new(Counterparty.all)
       end
     end
   end
