@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-module Api
-  module V1
-    class CompaniesController < BaseController
-      def index
-        respond_with ::CompanySerializer.new(Company.all)
-      end
-    end
+class Api::V1::CompaniesController < Api::V1::BaseController
+  def index
+    respond_with ::CompanySerializer.new(Company.all)
   end
 end

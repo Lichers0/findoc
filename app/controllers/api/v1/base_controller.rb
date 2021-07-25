@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-module Api
-  module V1
-    class BaseController < ApplicationController
-      respond_to :json
-    end
-  end
+class Api::V1::BaseController < ApplicationController
+  respond_to :json
 end

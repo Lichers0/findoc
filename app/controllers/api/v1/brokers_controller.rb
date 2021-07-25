@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-module Api
-  module V1
-    class BrokersController < BaseController
-      def index
-        respond_with ::BrokerSerializer.new(Counterparty.all)
-      end
-    end
+class Api::V1::BrokersController < Api::V1::BaseController
+  def index
+    respond_with ::BrokerSerializer.new(Counterparty.all)
   end
 end

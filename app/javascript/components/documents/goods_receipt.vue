@@ -64,11 +64,11 @@
                 round
                 dense
                 icon="remove"
-                @click="deleteRow(props.row.line_number)"
+                @click="deleteRow(props.row.lineNumber)"
                 ></q-btn>
             </q-td>
-            <q-td :props="props" key="line_number">
-              {{ props.row.line_number }}
+            <q-td :props="props" key="lineNumber">
+              {{ props.row.lineNumber }}
             </q-td>
             <q-td>
               <q-input v-model="props.row.upc" autofocus borderless filled dense></q-input>
@@ -77,16 +77,16 @@
               <q-input v-model="props.row.quantity" borderless filled dense></q-input>
             </q-td>
             <q-td>
-              <q-input v-model='props.row.price" borderless filled dense></q-input>
+              <q-input v-model="props.row.price" borderless filled dense></q-input>
             </q-td>
             <q-td :props="props" key="amount">
               {{ props.row.amount }}
             </q-td>
             <q-td>
-              <q-input v-model="props.row.broker_price" borderless filled dense></q-input>
+              <q-input v-model="props.row.brokerPrice" borderless filled dense></q-input>
             </q-td>
-            <q-td :props="props" key="broker_amount">
-              {{ props.row.proker_amount }}
+            <q-td :props="props" key="brokerAmount">
+              {{ props.row.prokerAmount }}
             </q-td>
             <q-td :props="props" key="total">
               {{ props.row.total }}
@@ -106,13 +106,13 @@
 import axios from 'axios'
 
 const columns = [
-  { name: 'line_number', label: '#', field: 'line_number', align: 'left', headerStyle: 'width: 15px' },
+  { name: 'lineNumber', label: '#', field: 'line_number', align: 'left', headerStyle: 'width: 15px' },
   { name: 'upc', label: 'UPC', field: 'upc', align: 'left', headerStyle: 'width: 200px'},
   { name: 'quantity', label: 'Quantity', field: 'quantity', align: 'left', headerStyle: 'width: 100px' },
   { name: 'price', label: 'Price', field: 'price', align: 'left', headerStyle: 'width: 100px' },
   { name: 'amount', label: 'Amount', field: 'amount', align: 'left', headerStyle: 'width: 100px' },
-  { name: 'broker_price', label: 'Broker price', field: 'broker_price', align: 'left', headerStyle: 'width: 100px' },
-  { name: 'broker_amount', label: 'Broker amount', field: 'broker_amount', align: 'left', headerStyle: 'width: 100px' },
+  { name: 'brokerPrice', label: 'Broker price', field: 'broker_price', align: 'left', headerStyle: 'width: 100px' },
+  { name: 'brokerAmount', label: 'Broker amount', field: 'broker_amount', align: 'left', headerStyle: 'width: 100px' },
   { name: 'total', label: 'Total', field: 'total', align: 'left', headerStyle: 'width: 100px' }
 ]
 
@@ -128,58 +128,54 @@ export default {
       broker: null,
       brokerOptions: [],
       columns,
-      rows: [
-        {
-          line_number: 1
-        }
-      ]
+      rows: []
     }
   },
   methods: {
-    fetchCompany() {
+    fetchCompanies() {
       axios.get('/api/v1/companies')
         .then(({ data }) => {
           this.companyOptions = data
         })
     },
-    fetchBroker() {
+    fetchBrokers() {
       axios.get('/api/v1/brokers')
         .then(({ data }) => {
           this.brokerOptions = data
         })
     },
-    fetchCounterpraty() {
+    fetchCounterparties() {
       axios.get('/api/v1/counterparties')
         .then(({ data }) => {
           this.counterpartyOptions = data
         })
     },
-    fetchWarehouse() {
+    fetchWarehouses() {
       axios.get('/api/v1/warehouses')
         .then(({ data }) => {
           this.warehouseOptions = data
         })
     },
-    load_selects() {
-      this.fetchCompany()
-      this.fetchBroker()
-      this.fetchCounterpraty()
-      this.fetchWarehouse()
+    loadSelects() {
+      this.fetchCompanies()
+      this.fetchBrokers()
+      this.fetchCounterparties()
+      this.fetchWarehouses()
     },
     addRow() {
       this.rows.push({
-        line_number: this.rows.length + 1
+        lineNumber: this.rows.length + 1
       })
     },
     deleteRow(id) {
-      this.rows = this.rows.filter(item => item.line_number !== id).map((item, index) => {
-        item.line_number = index + 1
+      this.rows = this.rows.filter(item => item.lineNumber !== id).map((item, index) => {
+        item.lineNumber = index + 1
         return item
       })
     }
   },
   created() {
-    this.load_selects()
+    this.loadSelects()
   }
 }
 
