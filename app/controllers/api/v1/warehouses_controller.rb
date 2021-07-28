@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::WarehousesController < Api::V1::BaseController
+class Api::V1::WarehousesController < ApiApplicationController
   def index
     respond_with ::WarehouseSerializer.new(Warehouse.all)
   end
