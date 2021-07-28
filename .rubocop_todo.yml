@@ -76,6 +76,9 @@ Metrics/PerceivedComplexity:
   Exclude:
     - 'bin/bundle'
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 # Offense count: 3
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
