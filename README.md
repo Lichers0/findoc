@@ -1,6 +1,6 @@
 # README
 
-<img src="https://github.com/Lichers0/findoc/workflows/Tests/badge.svg">
+<img src="https://github.com/Lichers0/findoc/workflows/Rails_tests/badge.svg">
 
 Inventory accounting
 
